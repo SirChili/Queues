@@ -64,19 +64,17 @@ int main() {
 				runnableQueue.push(createJob());
 				std::cout << "Job was successfully added to \"Runnable\" queue." << std::endl;
 				std::cout << "There is now " << runnableQueue.size() << " jobs enqueued" << std::endl;
-				system("Pause");
 			}
 			else {
 				sleepingQueue.push(createJob());
 				std::cout << "Max amount of jobs in \"Runnable\" queue is " << runMax << std::endl;
 				std::cout << "Adding job to \"Sleeping\" queue" << std::endl;
-				system("Pause");
 			}
 
 			break;
 		case 2:
 			if (runnableQueue.size() != 0) { printQueue(runnableQueue); }
-			else { std::cout << "ERROR - \"Runnable\" queue is empty\n"; }
+			else { std::cout << "ERROR - \"Runnable\" queue is empty" << std::endl; }
 			break;
 		case 3:
 			if (runnableQueue.size() != 0) {
@@ -100,7 +98,7 @@ int main() {
 				
 			}
 			else {
-				std::cout << "Moving job ID: " << sleepingQueue.front().getJobID() << " to \"Runnable\" queue...";
+				std::cout << "Moving job ID: " << sleepingQueue.front().getJobID() << " to \"Runnable\" queue..." << std::endl;
 				runnableQueue.emplace(sleepingQueue.front());
 				sleepingQueue.pop();
 			}
