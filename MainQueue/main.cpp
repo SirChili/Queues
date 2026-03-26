@@ -24,13 +24,25 @@ void printQueue(std::queue<Job> q) {
 Job createJob() {
 
 	std::string id;
+	std::string stringTime;
 	int time;
 
 	std::cout << "Enter Job ID: ";
 	std::cin >> id;
 
-	std::cout << "Enter Time Remaining: ";
-	std::cin >> time; 
+	while (true) {
+		
+		std::cout << "Enter Time Remaining: ";
+		std::cin >> stringTime;
+
+		try {
+			time = std::stoi(stringTime);
+			break;
+		}
+		catch (...) {
+			std::cout << "Invalid Input\n";
+		}
+	}
 
 	Job newJob(id, time);
 
